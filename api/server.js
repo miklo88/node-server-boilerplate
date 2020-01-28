@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
+// const morgan = require("morgan");
 
 // authenticate, routers will be brought in here.
 
@@ -8,6 +9,7 @@ const server = express();
 
 server.use(helmet());
 server.use(cors());
+// server.use(morgan());
 server.use(express.json());
 
 server.get("/", (req, res) => {
@@ -20,3 +22,5 @@ server.use((err, req, res, next) => {
     message: "ay dio mio we have an error. have fun debugging."
   });
 });
+
+module.exports = server;
