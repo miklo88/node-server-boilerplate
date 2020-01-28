@@ -1,9 +1,11 @@
+// express and the middleware trio
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 // const morgan = require("morgan");
 
 // authenticate, routers will be brought in here.
+//
 
 const server = express();
 
@@ -12,6 +14,7 @@ server.use(cors());
 // server.use(morgan());
 server.use(express.json());
 
+// server api GET
 server.get("/", (req, res) => {
   res.send("hola and welcome to carls api!");
 });
